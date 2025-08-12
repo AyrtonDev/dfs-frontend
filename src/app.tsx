@@ -1,11 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import { Login } from "./pages/login/login"
+import { LoginPage } from "@/modules/login/page/login"
 
 export const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<LoginPage />} />
       </Routes>
     </BrowserRouter>
   )
