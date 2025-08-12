@@ -12,6 +12,7 @@ import {
 } from "@/shared/components/ui/form"
 import { Input } from "@/shared/components/ui/input"
 import { CenteredLayout } from "@/shared/layouts/centered-layout"
+import { Link } from "react-router-dom"
 
 type Props = {
   form: UseFormReturn<SignUpFormType>
@@ -25,7 +26,7 @@ export const SignUpPresenter = ({ form, submit }: Props) => {
         <CardHeader>
           <CardTitle>Cadastro</CardTitle>
         </CardHeader>
-        <CardContent>
+        <CardContent className="flex flex-col gap-4">
           <Form {...form}>
             <form className="flex flex-col gap-4" onSubmit={form.handleSubmit(submit)}>
               <FormField
@@ -86,6 +87,12 @@ export const SignUpPresenter = ({ form, submit }: Props) => {
               </Button>
             </form>
           </Form>
+
+          <Link to="/login">
+            <Button className="w-full" variant="outline">
+              Voltar para Login
+            </Button>
+          </Link>
         </CardContent>
       </Card>
     </CenteredLayout>
