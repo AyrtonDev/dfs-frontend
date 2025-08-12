@@ -8,7 +8,7 @@ export const filterSchema = z
         max: z.string().optional(),
       })
       .optional(),
-    releaseDate: z
+    release: z
       .object({
         start: z.string().optional(),
         end: z.string().optional(),

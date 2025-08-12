@@ -1,4 +1,3 @@
-import type { FilterType } from "@/modules/movies/schemas/filter"
 import {
   Select,
   SelectTrigger,
@@ -6,7 +5,6 @@ import {
   SelectContent,
   SelectItem,
 } from "@/shared/components/ui/select"
-import type { SetStateAction } from "react"
 
 type Props = {
   data: any

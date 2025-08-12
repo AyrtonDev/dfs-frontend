@@ -12,11 +12,13 @@ import { Filter } from "lucide-react"
 import { DurationFilter } from "./filter/duration-filter"
 import { useState } from "react"
 import { useMovieList } from "../../contexts/movies-list-context"
+import { ReleaseDateFilter } from "./filter/release-date-filter"
+import { GenreFilter } from "./filter/genre-filter"
 
 export const FilterComponent = () => {
   const defaultValues = {
     duration: {},
-    releaseDate: {},
+    release: {},
     genre: "",
   }
   const { clearFilter, setFilter } = useMovieList()
@@ -42,8 +44,10 @@ export const FilterComponent = () => {
           <DialogTitle>Filtro</DialogTitle>
         </DialogHeader>
         <div className="flex items-center gap-2">
-          <div className="grid flex-1 gap-2">
+          <div className="grid flex-1 gap-4">
             <DurationFilter data={filtersWrap} setData={setFiltersWrap} />
+            <ReleaseDateFilter data={filtersWrap} setData={setFiltersWrap} />
+            <GenreFilter data={filtersWrap} setData={setFiltersWrap} />
           </div>
         </div>
         <DialogFooter className="sm:justify-start">
