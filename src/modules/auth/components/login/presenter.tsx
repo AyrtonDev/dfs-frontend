@@ -1,4 +1,4 @@
-import type { LoginParamType } from "@/modules/login/types/param"
+import type { LoginParamType } from "@/modules/auth/types/param"
 import { Button } from "@/shared/components/ui/button"
 import { Card, CardContent, CardHeader } from "@/shared/components/ui/card"
 import {

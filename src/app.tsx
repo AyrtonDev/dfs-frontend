@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import { LoginPage } from "@/modules/login/page/login"
+import { LoginPage } from "@/modules/auth/page/login"
 import { AuthProvider } from "./shared/contexts/auth-context"
 
 export const App = () => {
