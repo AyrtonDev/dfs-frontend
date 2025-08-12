@@ -2,7 +2,7 @@ import { api } from "@/shared/config/api"
 import type { AxiosError } from "axios"
 import type { SignUpFormType } from "../schemas/signup"
 
-export const loginService = async (body: SignUpFormType) => {
+export const signUpService = async (body: SignUpFormType) => {
   try {
     const result = await api.post("/signup", body)
     return result.data.token
