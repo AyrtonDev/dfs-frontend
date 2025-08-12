@@ -1,12 +1,15 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { LoginPage } from "@/modules/login/page/login"
+import { AuthProvider } from "./shared/contexts/auth-context"
 
 export const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<LoginPage />} />
-      </Routes>
-    </BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LoginPage />} />
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   )
 }
