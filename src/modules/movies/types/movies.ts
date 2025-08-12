@@ -11,3 +11,17 @@ export type MoviesData = {
   totalPages: number
   results: MoviesItem[]
 }
+
+export type MovieData = {
+  id: string
+  title: string
+  originalTitle: string | undefined
+  imageUrl: string | undefined
+  description: string | undefined
+  releaseDate: string | undefined
+  duration: number | undefined
+  genre: string
+  director: string | undefined
+  createdAt: string
+  updatedAt: string
+}
