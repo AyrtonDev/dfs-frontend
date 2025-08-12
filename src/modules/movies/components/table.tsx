@@ -1,8 +1,9 @@
 import { Button } from "@/shared/components/ui/button"
 import { Table, TableBody, TableRow, TableCell } from "@/shared/components/ui/table"
-import { PenIcon } from "lucide-react"
+import { Eye, PenIcon } from "lucide-react"
 import { formatDate } from "../helpers/format-date"
 import type { MoviesItem } from "../types/movies"
+import { Link } from "react-router-dom"
 
 type Props = {
   movies: MoviesItem[]
@@ -34,9 +35,18 @@ export const TableComponent = ({ movies }: Props) => {
                 </div>
               </TableCell>
               <TableCell>
-                <Button size="icon" variant="outline" className="cursor-pointer">
-                  <PenIcon />
-                </Button>
+                <Link to={`/filmes/edicao/${movie.id}`}>
+                  <Button size="icon" variant="outline" className="cursor-pointer">
+                    <PenIcon />
+                  </Button>
+                </Link>
+              </TableCell>
+              <TableCell>
+                <Link to={`/filmes/${movie.id}`}>
+                  <Button size="icon" variant="outline" className="cursor-pointer">
+                    <Eye />
+                  </Button>
+                </Link>
               </TableCell>
             </TableRow>
           ))}
