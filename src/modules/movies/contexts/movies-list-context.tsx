@@ -1,6 +1,6 @@
 import type { BasicPropsType } from "@/shared/types/props"
 import { createContext, useContext, useEffect, useState } from "react"
-import { defaultFilter, type FilterType } from "../schemas/filter"
+import { type FilterType } from "../schemas/filter"
 
 type LoginContextType = {
   filters: FilterType | null
