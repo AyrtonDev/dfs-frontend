@@ -27,7 +27,7 @@ export const LoginContainer = () => {
       const token = await loginService({ email, password })
       toast("Login feito com sucesso")
       login(token)
-      navigate("/dasboard")
+      navigate("/filmes")
     } catch (err: any) {
       setLoading(false)
       toast(err)

@@ -28,7 +28,7 @@ export const SignUpContainer = () => {
       const token = await signUpService({ email, password, name, passwordConfirmation })
       toast("Conta criada com sucesso")
       login(token)
-      navigate("/dasboard")
+      navigate("/filmes")
     } catch (err: any) {
       setLoading(false)
       toast(err)
