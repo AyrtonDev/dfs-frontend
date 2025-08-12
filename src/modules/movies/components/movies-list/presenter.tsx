@@ -26,7 +26,7 @@ export const MoviesPresenter = ({ movies }: Props) => {
             </Button>
           </div>
           {!!movies && <TableComponent movies={movies.results} />}
-          {!!movies && <PaginationList />}
+          {!!movies && <PaginationList page={movies.page} totalPages={movies.totalPages} />}
 
           {!movies && <ListSkeleton />}
         </div>

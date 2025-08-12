@@ -10,8 +10,26 @@ import {
 } from "@/shared/components/ui/dialog"
 import { Filter } from "lucide-react"
 import { DurationFilter } from "./filter/duration-filter"
+import { useState } from "react"
+import { useMovieList } from "../../contexts/movies-list-context"
 
 export const FilterComponent = () => {
+  const defaultValues = {
+    duration: {},
+    releaseDate: {},
+    genre: "",
+  }
+  const { clearFilter, setFilter } = useMovieList()
+  const [filtersWrap, setFiltersWrap] = useState<typeof defaultValues>(defaultValues)
+
+  const handleApplyFilter = () => {
+    setFilter(filtersWrap)
+  }
+
+  const handleClearFilter = () => {
+    clearFilter()
+    setFiltersWrap(defaultValues)
+  }
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -25,16 +43,20 @@ export const FilterComponent = () => {
         </DialogHeader>
         <div className="flex items-center gap-2">
           <div className="grid flex-1 gap-2">
-            <DurationFilter />
+            <DurationFilter data={filtersWrap} setData={setFiltersWrap} />
           </div>
         </div>
         <DialogFooter className="sm:justify-start">
           <DialogClose asChild>
-            <Button type="button" variant="secondary">
+            <Button type="button" variant="secondary" onClick={handleClearFilter}>
               Limpar
             </Button>
           </DialogClose>
-          <Button type="button">Aplicar</Button>
+          <DialogClose asChild>
+            <Button type="button" onClick={handleApplyFilter}>
+              Aplicar
+            </Button>
+          </DialogClose>
         </DialogFooter>
       </DialogContent>
     </Dialog>
