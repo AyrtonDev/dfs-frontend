@@ -12,6 +12,7 @@ import {
 import { Input } from "@/shared/components/ui/input"
 import { CenteredLayout } from "@/shared/layouts/centered-layout"
 import type { SubmitHandler, UseFormReturn } from "react-hook-form"
+import { Link } from "react-router-dom"
 
 type Props = {
   form: UseFormReturn<LoginParamType>
@@ -21,7 +22,7 @@ type Props = {
 export const LoginPresenter = ({ form, submit }: Props) => {
   return (
     <CenteredLayout>
-      <Card>
+      <Card className="max:h-2xl w-80">
         <CardHeader>Login</CardHeader>
         <CardContent>
           <Form {...form}>
@@ -56,6 +57,8 @@ export const LoginPresenter = ({ form, submit }: Props) => {
               <Button type="submit" className="w-full">
                 Login
               </Button>
+
+              <Link to="/cadastro"}>Cadastro</Link>
             </form>
           </Form>
         </CardContent>
