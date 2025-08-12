@@ -1,7 +1,14 @@
-export const MoviesPresenter = () => {
+import { CenteredLayout } from "@/shared/layouts/centered-layout"
+import type { MoviesData } from "../../types/movies"
+
+type Props = {
+  movies: MoviesData | null
+}
+
+export const MoviesPresenter = ({ movies }: Props) => {
   return (
-    <div>
-      <h1>Movies List</h1>
-    </div>
+    <CenteredLayout>
+      <div className="flex flex-col gap-4"></div>
+    </CenteredLayout>
   )
 }
