@@ -13,13 +13,15 @@ import { Input } from "@/shared/components/ui/input"
 import { CenteredLayout } from "@/shared/layouts/centered-layout"
 import type { SubmitHandler, UseFormReturn } from "react-hook-form"
 import { Link } from "react-router-dom"
+import { LoaderCircle } from "lucide-react"
 
 type Props = {
   form: UseFormReturn<LoginParamType>
   submit: SubmitHandler<LoginParamType>
+  isLoading: boolean
 }
 
-export const LoginPresenter = ({ form, submit }: Props) => {
+export const LoginPresenter = ({ form, submit, isLoading }: Props) => {
   return (
     <CenteredLayout>
       <Card className="max:h-2xl w-80">
@@ -54,8 +56,8 @@ export const LoginPresenter = ({ form, submit }: Props) => {
                 )}
               />
 
-              <Button type="submit" className="w-full">
-                Login
+              <Button type="submit" className="w-full" disabled={isLoading}>
+                {isLoading ? <LoaderCircle className="animate-spin" /> : "Login"}
               </Button>
 
               <Link className="text-center underline" to="/cadastro">
