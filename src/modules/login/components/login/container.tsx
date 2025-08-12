@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form"
-import { loginFormSchema, type LoginFormType } from "../schemas/login"
+import { loginFormSchema, type LoginFormType } from "../../schemas/login"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { LoginPresenter } from "./presenter"
 
