@@ -58,7 +58,7 @@ export const LoginPresenter = ({ form, submit }: Props) => {
                 Login
               </Button>
 
-              <Link to="/cadastro"}>Cadastro</Link>
+              <Link to="/cadastro">Cadastro</Link>
             </form>
           </Form>
         </CardContent>
