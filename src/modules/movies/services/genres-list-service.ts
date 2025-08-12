@@ -1,10 +1,9 @@
 import { api } from "@/shared/config/api"
 import type { AxiosError } from "axios"
-import type { FilterType } from "../schemas/filter"
 
-export const getMoviesService = async (filter: FilterType | null, token: string) => {
+export const getGenresService = async (token: string) => {
   try {
-    const result = await api.post("/movies", filter ? filter : {}, {
+    const result = await api.get("/genres", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
