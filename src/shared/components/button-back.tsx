@@ -8,8 +8,8 @@ type Props = {
 
 export const ButtonBack = ({ path }: Props) => {
   return (
-    <Link to={path} className="absolute">
-      <Button>
+    <Link to={path} className="absolute left-10 top-4">
+      <Button variant="outline">
         <ArrowLeft />
       </Button>
     </Link>
