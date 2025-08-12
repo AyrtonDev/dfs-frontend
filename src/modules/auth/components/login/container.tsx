@@ -27,7 +27,9 @@ export const LoginContainer = () => {
       const token = await loginService({ email, password })
       toast("Login feito com sucesso")
       login(token)
-      navigate("/filmes")
+      setTimeout(() => {
+        window.location.reload()
+      }, 1500)
     } catch (err: any) {
       setLoading(false)
       toast(err)
