@@ -47,7 +47,7 @@ export const LoginPresenter = ({ form, submit, isLoading }: Props) => {
                 name="password"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Password</FormLabel>
+                    <FormLabel>Senha</FormLabel>
                     <FormControl>
                       <Input {...field} placeholder="Digite sua senha" />
                     </FormControl>
