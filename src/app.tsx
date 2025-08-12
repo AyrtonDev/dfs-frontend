@@ -6,6 +6,7 @@ import { PublicRoute } from "@/shared/components/public-route"
 import { Toaster } from "@/shared/components/ui/sonner"
 import { PrivateRoute } from "./shared/components/private-route"
 import { MoviesPage } from "./modules/movies/pages/movies-list"
+import { MoviePage } from "./modules/movies/pages/movie"
 
 export const App = () => {
   return (
@@ -18,6 +19,7 @@ export const App = () => {
           </Route>
           <Route element={<PrivateRoute />}>
             <Route path="/filmes" element={<MoviesPage />} />
+            <Route path="/filmes/:id" element={<MoviePage />} />
           </Route>
         </Routes>
         <Toaster />
