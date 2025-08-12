@@ -4,7 +4,7 @@ import { defaultFilter, type FilterType } from "../schemas/filter"
 
 type LoginContextType = {
   filters: FilterType | null
-  setPagination: (page: number | string) => void
+  setPagination: (page: number) => void
   setFilter: (filter: string, value: any) => void
   setSearchTerm: (term: string) => void
   clearFilter: () => void
@@ -35,10 +35,10 @@ export const MovieListProvider = ({ children }: BasicPropsType) => {
     })
   }
 
-  const setPagination = (page: number | string) => {
+  const setPagination = (page: number) => {
     setFilters((prev) => ({
       ...prev,
-      pagination: Number(page),
+      pagination: page,
     }))
   }
 
