@@ -20,6 +20,7 @@ export type MovieData = {
   description: string | undefined
   releaseDate: string | undefined
   duration: number | undefined
+  budge: number | undefined
   genre: string
   director: string | undefined
   createdAt: string

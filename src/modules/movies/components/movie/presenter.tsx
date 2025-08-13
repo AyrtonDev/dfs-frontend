@@ -35,6 +35,7 @@ export const MoviePresenter = ({ movie }: Props) => {
 
             <span>Genêro: {movie.genre}</span>
             <span>Diretor: {movie.director || "Não informado"}</span>
+            <span>Orçamento: {movie.budge || "Não informado"}</span>
             <span>Duração: {movie.duration ? `${movie.duration} minutos` : "Não informado"} </span>
             <span>
               Lançamento: {movie.releaseDate ? formatDate(movie.releaseDate) : "Não informado"}

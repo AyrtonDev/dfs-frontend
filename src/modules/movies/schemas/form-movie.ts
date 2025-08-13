@@ -6,7 +6,7 @@ export const formMovieSchema = z.object({
   imageUrl: z.url(),
   description: z.string().optional(),
   releaseDate: z.date("Data de lançamento obrigatoria"),
-  duration: z.string("Duração obrigatorio"),
+  duration: z.string().optional(),
   budge: z.string().optional(),
   genre: z.string().min(4, "Genêro obrigratorio"),
   director: z.string().optional(),
