@@ -7,6 +7,8 @@ import { Toaster } from "@/shared/components/ui/sonner"
 import { PrivateRoute } from "./shared/components/private-route"
 import { MoviesPage } from "./modules/movies/pages/movies-list"
 import { MoviePage } from "./modules/movies/pages/movie"
+import { RegisterMoviePage } from "./modules/movies/pages/register-movie"
+import { EditMoviePage } from "./modules/movies/pages/edit-movie"
 
 export const App = () => {
   return (
@@ -20,6 +22,8 @@ export const App = () => {
           <Route element={<PrivateRoute />}>
             <Route path="/filmes" element={<MoviesPage />} />
             <Route path="/filmes/:id" element={<MoviePage />} />
+            <Route path="/filmes/registro" element={<RegisterMoviePage />} />
+            <Route path="/filmes/edit/:id" element={<EditMoviePage />} />
           </Route>
         </Routes>
         <Toaster />
