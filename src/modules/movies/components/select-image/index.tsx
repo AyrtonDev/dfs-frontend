@@ -17,9 +17,10 @@ import { uploadImageService } from "../../services/upload-image-service"
 
 type Props = {
   setImageUrl: (url: string) => void
+  imageUrl?: string
 }
 
-export function ImageUploadModal({ setImageUrl }: Props) {
+export function ImageUploadModal({ setImageUrl, imageUrl }: Props) {
   const { user } = useAuth()
   const inputRef = useRef<HTMLInputElement>(null)
   const [open, setOpen] = useState(false)
@@ -32,6 +33,12 @@ export function ImageUploadModal({ setImageUrl }: Props) {
       fetchImages(user)
     }
   }, [selectedImage])
+
+  useEffect(() => {
+    if (imageUrl && imageUrl.length > 0 && selectedImage.length === 0) {
+      setSelectedImage(imageUrl)
+    }
+  }, [imageUrl])
 
   const fetchImages = async (token: string) => {
     const imagesData = await getImagesService(token)

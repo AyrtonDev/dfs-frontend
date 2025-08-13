@@ -24,9 +24,11 @@ type Props = {
   submit: SubmitHandler<FormMovieType>
   setImageUrl: (url: string) => void
   isLoading: boolean
+  isUpdate?: boolean
+  imageUrl?: string
 }
 
-export const FormMovie = ({ form, submit, isLoading, setImageUrl }: Props) => {
+export const FormMovie = ({ form, submit, isLoading, setImageUrl, isUpdate, imageUrl }: Props) => {
   return (
     <Form {...form}>
       <form className="flex flex-col gap-4" onSubmit={form.handleSubmit(submit)}>
@@ -57,7 +59,7 @@ export const FormMovie = ({ form, submit, isLoading, setImageUrl }: Props) => {
           )}
         />
 
-        <ImageUploadModal setImageUrl={setImageUrl} />
+        <ImageUploadModal setImageUrl={setImageUrl} imageUrl={imageUrl} />
 
         <FormField
           control={form.control}
@@ -177,7 +179,13 @@ export const FormMovie = ({ form, submit, isLoading, setImageUrl }: Props) => {
         />
 
         <Button type="submit" className="w-full" disabled={isLoading}>
-          {isLoading ? <LoaderCircle className="animate-spin" /> : "Criar cadastro"}
+          {isLoading ? (
+            <LoaderCircle className="animate-spin" />
+          ) : isUpdate ? (
+            "Atualizar"
+          ) : (
+            "Criar cadastro"
+          )}
         </Button>
       </form>
     </Form>
